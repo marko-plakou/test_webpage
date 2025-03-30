@@ -2,20 +2,68 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: url('image4.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     text-align: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
 }
 
 h1 {
     font-size: 2.5em;
-    margin-top: 20px;
+    margin-top: 80px;
     color: #222;
     text-transform: uppercase;
 }
 
-.contact-info {
-    background: #ffffff;
+.contact-info, .gallery, section {
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     margin: 20px auto;
     width: 50%;
@@ -26,17 +74,6 @@ h1 {
 .contact-info p {
     font-size: 1.2em;
     margin: 10px 0;
-}
-
-.gallery {
-    position: relative;
-    width: 50%;
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .gallery img {

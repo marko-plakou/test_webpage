@@ -7,22 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <div class="contact-info">
+    <nav>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About Me</a></li>
+        </ul>
+    </nav>
+    
+    <section id="contact" class="contact-info">
+        <h2>Contact Details</h2>
         <p><strong>Name:</strong> John Doe</p>
         <p><strong>Email:</strong> johndoe@example.com</p>
         <p><strong>Phone:</strong> +123 456 7890</p>
         <p><strong>Location:</strong> New York, USA</p>
-    </div>
+    </section>
     
-    <h2>My Projects</h2>
-    <div class="gallery">
-        <img src="image1.jpg" class="active" alt="Project 1">
-        <img src="image2.jpg" alt="Project 2">
-        <img src="image3.jpg" alt="Project 3">
-        <button class="nav-button" onclick="prevImage()">Previous</button>
-        <button class="nav-button" onclick="nextImage()">Next</button>
-    </div>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="gallery">
+            <img src="image1.jpg" class="active" alt="Project 1">
+            <img src="image2.jpg" alt="Project 2">
+            <img src="image3.jpg" alt="Project 3">
+            <button class="nav-button" onclick="prevImage()">Previous</button>
+            <button class="nav-button" onclick="nextImage()">Next</button>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I am John Doe, an architect passionate about designing modern and sustainable spaces.</p>
+    </section>
     
     <script>
         let currentIndex = 0;
