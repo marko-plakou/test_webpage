@@ -21,6 +21,25 @@
         <p><strong>Email:</strong> johndoe@example.com</p>
         <p><strong>Phone:</strong> +123 456 7890</p>
         <p><strong>Location:</strong> New York, USA</p>
+
+        <h3>Contact Me</h3>
+        
+        <!-- Google Sign-In button -->
+        <div id="g-signin2"></div>
+
+        <!-- Contact Form (Initially hidden) -->
+        <form id="contact-form" action="https://formspree.io/f/matkos9916@gmail.com" method="POST" style="display:none;">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telephone:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <button type="submit">Send</button>
+        </form>
     </section>
     
     <section id="projects">
@@ -38,6 +57,31 @@
         <h2>About Me</h2>
         <p>Hello! I am John Doe, an architect passionate about designing modern and sustainable spaces.</p>
     </section>
+
+    <!-- Google API Script -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        var userEmail = profile.getEmail();
+        console.log("User Email: " + userEmail);
+        
+        // Enable the form or display a message after login
+        document.getElementById("contact-form").style.display = "block";  // Show form after login
+        document.getElementById("g-signin2").style.display = "none";  // Hide sign-in button after successful login
+      }
+
+      gapi.load('auth2', function() {
+        gapi.auth2.init({
+          client_id: '252813074716-jo2rp7fif4u3kn2jmtcav004s4q66nkf.apps.googleusercontent.com'  // Replace with your Google OAuth 2.0 client ID
+        }).then(function(auth2) {
+          auth2.attachClickHandler(document.getElementById('g-signin2'), {}, onSignIn, function(error) {
+            console.log(error);
+          });
+        });
+      });
+    </script>
     
     <script>
         let currentIndex = 0;
